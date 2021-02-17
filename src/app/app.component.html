@@ -1,0 +1,31 @@
+<div class="container-fluid">
+
+  <h1 class="card-title">Kaiba Card View</h1>
+  <div class="add-items d-flex">
+    <input type="text" class="form-control todo-list-input" #input size="28"
+           placeholder="Input Hand Cards">
+    <button (click)="render(input.value)"
+            class="add btn btn-primary font-weight-bold todo-list-add-btn">Fan
+    </button>
+  </div>
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1 *ngIf="cards.length > 0">Fan a Hand</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="container">
+      <ul class="list-group list-group-horizontal">
+        <li *ngFor="let card of cards" class="list-group-item">
+          <img class='card' [src]="'/assets/cards/' + card + '.svg'" [alt]="card">
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
